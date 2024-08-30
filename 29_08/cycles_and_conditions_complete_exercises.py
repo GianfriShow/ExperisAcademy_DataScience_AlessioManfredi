@@ -1,6 +1,6 @@
 # 1
 # input a number and print if it's even or odd
-'''
+
 def even_or_odd():
     number = int(input("Type an integer:\n"))
     if number%2==0:
@@ -35,7 +35,7 @@ def squares_list():
     squared = [num**2 for num in seq]
     print(squared)
 
-squares_list()'''
+squares_list()
 
 
 # 4
