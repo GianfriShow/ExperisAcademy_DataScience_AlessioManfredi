@@ -34,4 +34,9 @@ in questo modo di creare delle gerarchie o alberi genealogici con relazioni di p
 il polimorfismo e' strettamente collegato all'ereditarieta' in quanto e' l'abilita' di cambiare forma di un oggetto ma non il comportamento,
 o al contrario di cambiare il comportamento ma non la forma, permettendoci di trattare oggetti di classi diverse allo stesso modo fintanto che abbiano
 una classe in comune (stesso parent).
+Per quanto riguarda l'astrazione, il concetto sembra simile all'incapsulamento, perche' ci da' la possibilita' di offuscare gli elementi complicati
+o non necessari, confusionali, per mostrare invece soltanto le parti rilevanti e di interesse; l'astrazione favorisce la semplicita' e l'intuitivita',
+due concetti fondamentali e alla base di un linguaggio high-level come Python, che invece di comunicare con la macchina direttamente attraverso
+un insieme di 0 e 1, utilizza un interprete per verificare e compilare lo script prima di eseguirlo, astraendo questi passaggi al programmatore e cosi'
+aumentando il livello di semplicita' di approccio del linguaggio.
 '''
