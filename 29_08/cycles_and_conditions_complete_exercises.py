@@ -49,30 +49,34 @@ import copy
 def find_maximum_and_length_of_list():
 
     temp_seq = input("Type a list of integers separated only by a comma:\n")
-    try:
+
+    try:  # error handling if empty
         temp_seq[0]
     except:
         print("The list is empty")
         return
+    
     seq = temp_seq.split(",")
-    try:
+
+    try:  # error handling for wrong types
         seq = [int(num) for num in seq]
     except:
         print("The list must contain INTEGERS only, separated by a SINGLE comma (,)")
         return
+    
     seq_copy = copy.deepcopy(seq)
     max = []
     length = 0
     go = True
     
-    while go:
+    while go:  # count
         try:
             seq_copy.pop()
             length += 1
         except:
             go = False
 
-    for i in seq:
+    for i in seq:  # find max
         if len(max) and i>max[0]:
             max[0]=i
         else:
