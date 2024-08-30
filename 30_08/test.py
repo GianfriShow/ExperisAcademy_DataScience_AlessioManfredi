@@ -1,3 +1,5 @@
+# I had no time to do exercises: 3 (UML), 12 (open question), 14 (EXTRA open question)
+
 # 5
 # take as input a word and add it to a list, ask if the user wants to repeat this by adding another word, then print all elements in the list at the end
 
@@ -24,6 +26,7 @@ def print_list():
 
 print_list()
 
+
 # 7
 '''
 Le tre regole fondamentali dell'OOP sono incapsulamento, ereditarieta', e polimorfismo:
@@ -39,4 +42,64 @@ o non necessari, confusionali, per mostrare invece soltanto le parti rilevanti e
 due concetti fondamentali e alla base di un linguaggio high-level come Python, che invece di comunicare con la macchina direttamente attraverso
 un insieme di 0 e 1, utilizza un interprete per verificare e compilare lo script prima di eseguirlo, astraendo questi passaggi al programmatore e cosi'
 aumentando il livello di semplicita' di approccio del linguaggio.
+'''
+
+
+# 10
+# ask the user for two lists of 5 numbers, then print the sums of elements on the same indices, finally ask if they want to repeat this
+
+def sum_lists():
+
+    # preparation
+    list1 = []
+    list2 = []
+    count = 0
+    keep_going = True
+    
+    # list 1
+    while count < 5:
+        try:
+            list1.append(float(input("Type the next number for list 1:    ")))
+            count += 1
+        except:
+            print("Not a valid input.")
+    
+    count = 0  # reset count
+    print(f"First list is complete: {list1}")
+
+    # list 2
+    while count < 5:
+        try:
+            list2.append(float(input("Type the next number for list 2:    ")))
+            count += 1
+        except:
+            print("Not a valid number.")
+    
+    print(f"Second list is complete: {list2}")
+
+    # print sums
+    for index in range(5):
+        print(list1[index] + list2[index])
+
+    # repeat game?
+    while keep_going:
+        try:
+            choice = int(input("Would you like to play again? (type number)\n    1) No\n    2) Yes\n"))-1
+            assert choice == 0 or choice == 1
+            if choice:
+                sum_lists()
+            keep_going = False
+        except:
+            print("Not a valid input.")
+
+sum_lists()
+
+
+# 12
+'''
+'''
+
+
+# 14
+'''
 '''
