@@ -1,6 +1,6 @@
 # 1
 # input a number and print if it's even or odd
-
+'''
 def even_or_odd():
     number = int(input("Type an integer:\n"))
     if number%2==0:
@@ -35,7 +35,7 @@ def squares_list():
     squared = [num**2 for num in seq]
     print(squared)
 
-squares_list()
+squares_list()'''
 
 
 # 4
@@ -48,14 +48,18 @@ import copy
 
 def find_maximum_and_length_of_list():
 
-    temp_seq = input("Type a list of integers separated ONLY by a comma:\n")
+    temp_seq = input("Type a list of integers separated only by a comma:\n")
     try:
         temp_seq[0]
     except:
         print("The list is empty")
         return
     seq = temp_seq.split(",")
-    seq = [int(num) for num in seq]
+    try:
+        seq = [int(num) for num in seq]
+    except:
+        print("The list must contain INTEGERS only, separated by a SINGLE comma (,)")
+        return
     seq_copy = copy.deepcopy(seq)
     max = []
     length = 0
