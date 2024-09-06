@@ -14,7 +14,7 @@ def showcase():
         return wrapper
     
     def menu():
-        choice = int(input("Please select one of the following topics:\n    1) UML\n    2) Lists\n    3) Range\n    4) Loops\n    5) Conditions\n    6) Company roles\n    7) Tasking\n    8) Methodologies of software development\n    9) GitHub\n    10) Exit"))
+        choice = int(input("Please select one of the following topics:\n    1) UML\n    2) Lists\n    3) Range\n    4) Loops\n    5) Conditions\n    6) Company roles\n    7) Tasking\n    8) Methodologies of software development\n    9) GitHub\n    10) Exit\n"))
         if choice==1:
             uml_menu()
         elif choice==2:
