@@ -52,5 +52,17 @@ guessing_game()
 
 
 # 2
-# lorem ipsum
+# ask the user for a number N, then print Fibonacci's sequence until the first output greater than N (excluded)
 # NO ERROR HANDLING FROM NOW ON BECAUSE IT TAKES UP TOO MUCH TIME AND I CAN NEVER FINISH EXERCISES BECAUSE OF IT
+
+def fibonacci_bounded(bound):
+    temp1, temp2 = 0, 1
+    sequence = [temp1, temp2]
+    while sequence[-1] < bound:
+        temp1, temp2 = temp2, temp1+temp2
+        sequence.append(temp2)
+    if sequence[-1]>bound:
+        sequence.pop()
+    print(sequence)
+
+fibonacci_bounded(1000)
