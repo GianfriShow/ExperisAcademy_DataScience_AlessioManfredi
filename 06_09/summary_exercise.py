@@ -35,14 +35,43 @@ def showcase():
             github_menu()
         else:
             pass
-    
-    # add all submenus with wrapper for each
+
     @add_back_to_menu_option
     def uml_menu():
-        
+        print("UML is...")
+
+    @add_back_to_menu_option
+    def lists_menu():
+        print("UML is...")
+
+    @add_back_to_menu_option
+    def range_menu():
+        print("UML is...")
     
+    @add_back_to_menu_option
+    def loops_menu():
+        print("UML is...")
 
+    @add_back_to_menu_option
+    def conditions_menu():
+        print("UML is...")
 
+    @add_back_to_menu_option
+    def roles_menu():
+        print("UML is...")
 
+    @add_back_to_menu_option
+    def tasking_menu():
+        print("UML is...")
 
+    @add_back_to_menu_option
+    def methodologies_menu():
+        print("UML is...")
 
+    @add_back_to_menu_option
+    def github_menu():
+        print("UML is...")
+
+    menu()
+
+showcase()
