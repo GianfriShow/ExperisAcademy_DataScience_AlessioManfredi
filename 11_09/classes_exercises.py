@@ -108,12 +108,11 @@ def init_check_book_class(function):
 import os
 
 class Library:
-
-    count = 0
-
+    
     @init_check_string_inputs
     def __init__(self, name):
         self.name = name
+        self.book_count = 0
         try:
             os.mkdir(os.path.join('11_09',name))
         except:
@@ -123,8 +122,9 @@ class Library:
     def add_book(self, book):
         with open(os.path.join('11_09',self.name, book.title), 'w') as temp_book:
             temp_book.write(f"""{book.title} ({book.pages} pages)\n\nWritten by "{book.author}"\n\n\n\n{book.text}""")
-        self.count += 1
+        self.book_count += 1
     
 book1.modify_text("This is a test to check that everything works correctly.\nBye bye!")
 my_library = Library("first_library")
 my_library.add_book(book1)
+print(my_library.book_count)
