@@ -252,3 +252,46 @@ print(my_factory.inventory)
 my_factory.return_product(dress1,6)
 my_factory.return_product(phone1,3)
 print(my_factory.inventory)
+
+# EXTRA: create a superclass Product that takes the attributes 'name', 'production_cost', 'selling_price' and the method 'calculate_profit()'
+# instead of the subclasses (clothing,etc.): the latter maintain their specific attribute(s) only and inherit the rest from the superclass Product
+
+class Product:
+    def __init__(self, name, production_cost, selling_price):
+        self.name = name
+        self.production_cost = production_cost
+        self.selling_price = selling_price
+    def calculate_profit(self):
+        return self.selling_price-self.production_cost
+class Clothing(Product):
+    def __init__(self, name, material, production_cost, selling_price):
+        Product.__init__(self, name, production_cost, selling_price)
+        self.material = material
+class Electronics(Product):
+    def __init__(self, name, warranty, production_cost, selling_price):
+        Product.__init__(self, name, production_cost, selling_price)
+        self.warranty = warranty
+class Factory:
+    def __init__(self, inventory = {}):
+        self.inventory = inventory
+    def add_product(self, product, units):
+        self.inventory[product.name] = units if product not in self.inventory else self.inventory[product.name] + units
+    def sell_product(self, product, units):
+        if units<=self.inventory[product.name]:
+            self.inventory[product.name] -= units
+            profits = product.calculate_profit()*units
+            if not profits<0:
+                profits = '+'+str(profits)
+            print(f"Result from this sale:    {profits}")
+        else:
+            print("Error: not enough units in stock")
+    def return_product(self, product, units):
+        self.inventory[product.name] += units
+
+dress1 = Clothing('t-shirt','cotton',5,15)
+
+print(type(dress1), dress1.__class__)  # show the direct class (lowest in the hierarchy)
+print(isinstance(dress1, (Clothing)))  # check if an object is an instance of a given class
+print(isinstance(dress1, (Product)))  # same thing but we can also check for superclasses
+print(issubclass(Clothing, Product))  # check if first class is a subclass of the second class
+print(dress1.__class__.__mro__)  # show the complete inheritance hierarchy, including all superclasses (from lowest to highest, most specific to most general)
