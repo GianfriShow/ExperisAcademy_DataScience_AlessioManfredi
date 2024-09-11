@@ -149,6 +149,7 @@ print(my_library.book_count)
 # finally, create a test object and check that all methods work
 
 class Restaurant:
+    @init_check_string_inputs
     def __init__(self, name, cuisine):
         self.name = name
         self.cuisine = cuisine
@@ -164,8 +165,10 @@ class Restaurant:
     def close_restaurant(self):
         self.open = False
         print(f"The restaurant is now closed")
+    @init_check_string_inputs
     def add_to_menu(self, dish, price):
         self.menu[dish] = price
+    @init_check_string_inputs
     def remove_from_menu(self, dish):
         del self.menu[dish]
     def print_menu(self):
