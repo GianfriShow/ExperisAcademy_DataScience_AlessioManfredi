@@ -128,3 +128,61 @@ book1.modify_text("This is a test to check that everything works correctly.\nBye
 my_library = Library("first_library")
 my_library.add_book(book1)
 print(my_library.book_count)
+
+
+
+# 4
+# create a class Restaurant with these requirements:
+# - constructor can accept 2 parameters: name of restaurant and type of cuisine offered
+# - attribute 'open' telling if the restaurant is open or not, False by default
+# - a 'menu' dictionary with all dishes and corresponding prices
+#
+# class methods:
+# - describe_restaurant() printing a sentence with info about name and cuisine
+# - open_status() printing whether the restaurant is open
+# - open_restaurant() opening the restaurant and printing that it is now open
+# - close_restaurant() doing the opposite of open_restaurant()
+# - add_to_menu() adding a dish to the menu
+# - remove_from_menu() removing a dish from the menu
+# - print_menu() printing the menu
+#
+# finally, create a test object and check that all methods work
+
+class Restaurant:
+    def __init__(self, name, cuisine):
+        self.name = name
+        self.cuisine = cuisine
+        self.open = False
+        self.menu = {}
+    def describe_restaurant(self):
+        print(f"The restaurant's name is '{self.name}', offering {self.cuisine} food")
+    def open_status(self):
+        print(f"The restaurant is {"open" if self.open else "closed"}")
+    def open_restaurant(self):
+        self.open = True
+        print(f"The restaurant is now open")
+    def close_restaurant(self):
+        self.open = False
+        print(f"The restaurant is now closed")
+    def add_to_menu(self, dish, price):
+        self.menu[dish] = price
+    def remove_from_menu(self, dish):
+        del self.menu[dish]
+    def print_menu(self):
+        for dish,price in self.menu.items():
+            print(f"{dish}:    {price}")
+
+restaurant1 = Restaurant('test_restaurant','test_cuisine')
+print(type(restaurant1))
+print(restaurant1.name, restaurant1.cuisine,restaurant1.open,restaurant1.menu)
+restaurant1.describe_restaurant()
+restaurant1.open_status()
+restaurant1.open_restaurant()
+restaurant1.open_status()
+restaurant1.close_restaurant()
+restaurant1.open_status()
+restaurant1.add_to_menu('dish 1','25 dollars')
+restaurant1.add_to_menu('dish 2','30 dollars')
+restaurant1.print_menu()
+restaurant1.remove_from_menu('dish 1')
+restaurant1.print_menu()
