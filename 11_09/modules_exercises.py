@@ -8,4 +8,3 @@
 # - remove_book(isbn) removing a book from the catalogue based on its ID
 # - search_by_title(title) returning a list of books with the given title
 # - show_catalogue() printing a description of all books in the catalogue
-

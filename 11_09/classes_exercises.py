@@ -189,3 +189,66 @@ restaurant1.add_to_menu('dish 2','30 dollars')
 restaurant1.print_menu()
 restaurant1.remove_from_menu('dish 1')
 restaurant1.print_menu()
+
+
+
+# 5
+# create a management system for a factory selling several products
+# create at least 2 classes for products such as Clothing or Electronics, with specific attributes such as material or warranty respectively
+# these classes should also have the attributes: name of product, production costs, selling price
+# furthermore, write a method calculate_profit() that returns the difference between selling price and production costs
+# create also a class for factories, with attribute 'inventory' (dictionary keeping track of products and number in stock), and methods:
+# add_product() that adds a product to inventory, sell_product() that sells a certain number of units of a product and modifies inventory accordingly
+# and prints the profits from this sale, return_product() increasing the units in stock for a given product by an amount
+# and modifying inventory accordingly
+
+class Clothing:
+    def __init__(self, name, material, production_cost, selling_price):
+        self.name = name
+        self.material = material
+        self.production_cost = production_cost
+        self.selling_price = selling_price
+    def calculate_profit(self):
+        return self.selling_price-self.production_cost
+class Electronics:
+    def __init__(self, name, warranty, production_cost, selling_price):
+        self.name = name
+        self.warranty = warranty
+        self.production_cost = production_cost
+        self.selling_price = selling_price
+    def calculate_profit(self):
+        return self.selling_price-self.production_cost
+class Factory:
+    def __init__(self, inventory = {}):
+        self.inventory = inventory
+    def add_product(self, product, units):
+        self.inventory[product.name] = units if product not in self.inventory else self.inventory[product.name] + units
+    def sell_product(self, product, units):
+        if units<=self.inventory[product.name]:
+            self.inventory[product.name] -= units
+            profits = product.calculate_profit()*units
+            if not profits<0:
+                profits = '+'+str(profits)
+            print(f"Result from this sale:    {profits}")
+        else:
+            print("Error: not enough units in stock")
+    def return_product(self, product, units):
+        self.inventory[product.name] += units
+
+dress1 = Clothing('t-shirt','cotton',5,15)
+print(dress1.name,dress1.material,dress1.production_cost,dress1.selling_price,dress1.calculate_profit())
+phone1 = Electronics('my_phone','5 years',1000,699)
+print(phone1.name,phone1.warranty,phone1.production_cost,phone1.selling_price,phone1.calculate_profit())
+my_factory = Factory()
+print(my_factory.inventory)
+my_factory.add_product(dress1,143)
+print(my_factory.inventory)
+my_factory.add_product(phone1,58)
+print(my_factory.inventory)
+my_factory.sell_product(dress1,32)
+my_factory.sell_product(phone1,89)
+my_factory.sell_product(phone1,12)
+print(my_factory.inventory)
+my_factory.return_product(dress1,6)
+my_factory.return_product(phone1,3)
+print(my_factory.inventory)
