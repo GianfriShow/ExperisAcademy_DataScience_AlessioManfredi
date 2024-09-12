@@ -1,7 +1,7 @@
 # write 2 scripts:
 # 1) generate 5 random numbers and save them in a file
 # 2) game where the user should guess at least 2 of these numbers; if they lose, they can try again 3 more times or decide to give up at any time
-"""
+
 import random
 
 def rng(count,path):  # writes a csv file with the list of numbers
@@ -74,7 +74,7 @@ def file_stats(file):  # assume the rows are separated by '\n' only
         return row_number, word_number, non_whitespace_character_count
 
 print(file_stats('12_09/lorem_ipsum.txt'))
-"""
+
 
 
 # create a management system for students
