@@ -55,3 +55,20 @@ path = '12_09/test.csv'
 append_file(path,new_row)
 print(read_file(path))
 print(csv_rows_to_lists(csv_to_rows(path)))
+
+
+
+import pickle  # library for binary content
+
+dictionary = {1:'Thomas',2:"Mark"}
+dictionary_binary = pickle.dumps(dictionary)  # transform a dictionary to binary
+
+with open('12_09/binary.bin','wb') as my_file:  # write a binary file
+    my_file.write(dictionary_binary)
+
+with open('12_09/binary.bin','rb') as my_file:  # read a binary file
+    content = my_file.read()
+
+print(content)  # unreadable because binary
+readable_content = pickle.loads(content)  # make it readable
+print(readable_content)
