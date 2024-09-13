@@ -98,7 +98,7 @@ mydb = mysql.connector.connect(  # connect to the database
     host = 'localhost',
     user = 'root',
     password = 'root'
-#   port = ....  # in case we change port from the default
+#   port = ....  # in case we change port from the default (3306)
 )
 
 print(mydb)
