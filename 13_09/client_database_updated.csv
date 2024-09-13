@@ -1,0 +1,6 @@
+id,name,surname,date_of_birth,residence,underage,above_17,above_20
+0,John,Smith,1987-5-17,New York,,X,X
+1,Emma,Johnson,2012-8-27,Los Angeles,X,,
+2,Lucas,Williams,2007-12-5,Chicago,X,,
+3,Sophia,Brown,2005-8-26,Houston,,X,
+4,James,Jones,2001-2-9,Phoenix,,X,X
