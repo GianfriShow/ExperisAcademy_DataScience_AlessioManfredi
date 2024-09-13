@@ -127,7 +127,7 @@ mycursor = mydb.cursor()
 sql = 'create table users(id int auto_increment primary key, name varchar(255), surname varchar(255))'
 mycursor.execute(sql)
 
-sql = 'insert into users(name,surname) values(%s,%s)'
+sql = 'insert into users(name,surname) values(%s,%s)'  # '%s' is used to prevent SQL injection and for dynamic values
 val = [("Mark","Jones"),("Luke","Stone"),("John","Rovers")]
 mycursor.executemany(sql, val)  # if we only have one tuple to add, we use execute() instead
 
