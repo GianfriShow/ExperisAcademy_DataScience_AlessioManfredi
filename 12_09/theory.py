@@ -131,7 +131,7 @@ sql = 'insert into users(name,surname) values(%s,%s)'
 val = [("Mark","Jones"),("Luke","Stone"),("John","Rovers")]
 mycursor.executemany(sql, val)  # if we only have one tuple to add, we use execute() instead
 
-mydb.commit()
+mydb.commit()  # whenever we modify tables/databases, we need to also confirm the query using commit()
 
 print(mycursor.rowcount,"data points uploaded")
 print(mycursor.lastrowid)  # show the id of the last row
