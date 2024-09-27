@@ -1,4 +1,4 @@
-from chocolate.py import Chocolate
+from chocolate import Chocolate
 
 class ChocolateCake(Chocolate):
     def __init__(self, type, shape, filling):
